@@ -1,0 +1,27 @@
+diff --git a/spacewalk-client-cert.spec b/spacewalk-client-cert.spec
+index e09bc7f..099382e 100644
+--- a/spacewalk-client-cert.spec
++++ b/spacewalk-client-cert.spec
+@@ -1,10 +1,10 @@
+-%if 0%{?fedora}
++%if 0%{?fedora} || 0%{?rhel} >= 8
+ %global build_py3   1
+ %endif
+ 
+ Name:		spacewalk-client-cert
+ Version:	2.8.2
+-Release:	2%{?dist}
++Release:	3%{?dist}
+ Summary:	Package allowing manipulation with Spacewalk client certificates
+ 
+ License:	GPLv2
+@@ -51,6 +51,9 @@ make -f Makefile.spacewalk-client-cert install PREFIX=$RPM_BUILD_ROOT \
+ %endif
+ 
+ %changelog
++* Wed Mar 14 2018 Tomas Kasparek <tkasparek@redhat.com> 2.8.2-3
++- build spacewalk-client-cert for python3 (tkasparek@redhat.com)
++
+ * Mon Mar 05 2018 Tomas Kasparek <tkasparek@redhat.com> 2.8.2-2
+ - rebuild for rhel8
+ 

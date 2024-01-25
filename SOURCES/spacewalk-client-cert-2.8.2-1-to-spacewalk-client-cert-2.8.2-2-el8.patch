@@ -1,0 +1,23 @@
+diff --git a/spacewalk-client-cert.spec b/spacewalk-client-cert.spec
+index 7d3b12c..e09bc7f 100644
+--- a/spacewalk-client-cert.spec
++++ b/spacewalk-client-cert.spec
+@@ -4,7 +4,7 @@
+ 
+ Name:		spacewalk-client-cert
+ Version:	2.8.2
+-Release:	1%{?dist}
++Release:	2%{?dist}
+ Summary:	Package allowing manipulation with Spacewalk client certificates
+ 
+ License:	GPLv2
+@@ -51,6 +51,9 @@ make -f Makefile.spacewalk-client-cert install PREFIX=$RPM_BUILD_ROOT \
+ %endif
+ 
+ %changelog
++* Mon Mar 05 2018 Tomas Kasparek <tkasparek@redhat.com> 2.8.2-2
++- rebuild for rhel8
++
+ * Fri Feb 09 2018 Michael Mraka <michael.mraka@redhat.com> 2.8.2-1
+ - remove install/clean section initial cleanup
+ - removed Group from specfile
